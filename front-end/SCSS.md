@@ -1,4 +1,4 @@
-# Sass与SCSS的关系
+# SCSS的语法
   * Sass，一种缩进语法
 
   最开始Sass是Haml的一部分，Haml是一种预处理器，由Ruby开发者设计和开发，Sass类似Ruby的语法，****没有花括号，没有分号，具有严格的缩进****
@@ -154,3 +154,39 @@ $test:top,right,bottom,left;
 
 */
 ```
+通过@at-root表示不想嵌套选择器，当使用&选择器时，就算你不想嵌套选择器，Sass也会自动嵌套。
+
+#{&}的用法
+SCSS
+```SCSS
+```
+@at-root和#{&}结合
+Sass有脚本模式#{}，他和&不同之处是，**&只用作选择器，它只能出现在一个复合的开始选择器，类似于一个类型选择器**，如a或者h1。但<font color=red><b>#{}他表示的是一个插值，它可以用在任何地方</b></font>。同样的，当@at-root和#{&}一起使用时，可以给我们的开发带来极大的方便与优势。
+
+SCSS
+```SCSS
+.block {
+  color:red;
+  @at-root #{&}__element{
+    color:green;
+  }
+  @at-root #{&}--modifier {
+    color:blue;
+  }
+}
+```
+CSS
+```CSS
+.block {
+  color: red;
+}
+.block__element {
+  color: green;
+}
+.block--modifier {
+  color: blue;
+}
+```
+@media 可以更加窗口大小不同使用不同的字体
+
+BEM是让css的类选择器可以拼接生成 使用@at-root和#{&}来实现
