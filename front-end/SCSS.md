@@ -4,6 +4,7 @@
   最开始Sass是Haml的一部分，Haml是一种预处理器，由Ruby开发者设计和开发，Sass类似Ruby的语法，****没有花括号，没有分号，具有严格的缩进****
   * SCSS，一种CSS-like语法
 
+  <font color=red>SCSS 是 Sass 3 引入新的语法，其语法完全兼容 CSS3，并且继承了 Sass 的强大功能</font>。也就是说，任何标准的 CSS3 样式表都是具有相同语义的有效的 SCSS 文件。
 
 ## 常用语法
 普通变量的声明
